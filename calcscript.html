@@ -1,0 +1,55 @@
+<html>
+    <head>
+        JavaScript calc
+        <title> calculator</title>
+    </head>
+    <body>
+        <table> 
+            <thead>
+                <tr>
+                   <td colspan="3"><input type="text"id="input">  </td>
+                   <td><button onclick="clr()">Clear</button></td>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button onclick="inp('1')">1</button></td>
+                    <td><button onclick="inp('2')">2</button></td>
+                    <td><button onclick="inp('3')">3</button></td>
+                    <td><button onclick="inp('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inp('4')">4</button></td>
+                    <td><button onclick="inp('5')">5</button></td>
+                    <td><button onclick="inp('6')">6</button></td>
+                    <td><button onclick="inp('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inp('7')">7</button></td>
+                    <td><button onclick="inp('8')">8</button></td>
+                    <td><button onclick="inp('9')">9</button></td>
+                    <td><button onclick="inp('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inp('.')">.</button></td>
+                    <td><button onclick="inp('0')">0</button></td>
+                    <td><button onclick="inp('/')">/</button></td>
+                    <td><button onclick="op()">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            function inp(data){
+                document.getElementById('input' ).value+=data;
+            }
+            function op(){
+              var stmt=document.getElementById('input').value;
+              var out=eval(stmt);
+              document.getElementById('input').value=out;
+            }
+            function clr(){
+                document.getElementById('input').value=''
+            }
+        </script>
+    </body>
+</html>
